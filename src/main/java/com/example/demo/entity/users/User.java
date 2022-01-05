@@ -1,11 +1,10 @@
-package com.example.demo.entity;
+package com.example.demo.entity.users;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

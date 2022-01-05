@@ -1,6 +1,7 @@
-package com.example.demo.entity;
+package com.example.demo.entity.option;
 
 import com.example.demo.entity.core.BaseEntity;
+import com.example.demo.entity.users.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,7 +29,6 @@ public class CustomersOrder extends BaseEntity {
     private List<Suggestion> suggestions=new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "select_suggestion_id")
     private Suggestion selectSuggestion;
 
     @Enumerated(EnumType.STRING)

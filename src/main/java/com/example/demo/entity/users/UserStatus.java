@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.entity.users;
 
 import com.example.demo.entity.core.BaseEntity;
 import lombok.AllArgsConstructor;
@@ -13,6 +13,6 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class UserRole extends BaseEntity {
-    private String role;
+public class UserStatus extends BaseEntity {
+    private String status;
 }

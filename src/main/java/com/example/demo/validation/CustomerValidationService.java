@@ -1,7 +1,6 @@
 package com.example.demo.validation;
 
-import com.example.demo.entity.Customer;
-import com.example.demo.exception.ValidationException;
+import com.example.demo.entity.users.Customer;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;

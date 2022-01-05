@@ -1,10 +1,10 @@
 package com.example.demo.service;
 
 import com.example.demo.config.AppConfig;
-import com.example.demo.entity.Customer;
-import com.example.demo.entity.CustomersOrder;
-import com.example.demo.entity.HomeService;
-import com.example.demo.entity.HomeServiceOption;
+import com.example.demo.entity.users.Customer;
+import com.example.demo.entity.option.CustomersOrder;
+import com.example.demo.entity.option.HomeService;
+import com.example.demo.entity.option.HomeServiceOption;
 import com.example.demo.repository.CustomerRepository;
 import com.example.demo.repository.CustomersOrderRepository;
 import com.example.demo.repository.HomeServiceOptionRepository;

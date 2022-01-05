@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Customer;
-import com.example.demo.entity.CustomersOrder;
+import com.example.demo.entity.users.Customer;
+import com.example.demo.entity.option.CustomersOrder;
 import com.example.demo.repository.CustomerRepository;
 import com.example.demo.service.core.BaseService;
 import com.example.demo.validation.CustomerValidationService;
