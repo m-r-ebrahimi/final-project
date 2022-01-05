@@ -1,6 +1,5 @@
 package com.example.demo.entity;
 
-import com.example.demo.entity.BasePerson;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +12,6 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class Admin extends BasePerson {
+public class Admin extends User {
     private String adminState;
 }

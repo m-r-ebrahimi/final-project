@@ -4,7 +4,6 @@ import com.example.demo.entity.core.BaseEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
@@ -13,12 +12,13 @@ import javax.persistence.MappedSuperclass;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class BasePerson extends BaseEntity {
+public class BaseUser extends BaseEntity {
     private String firstname;
     private String lastname;
     private String email;
+    private String username;
     private String password;
     @Lob
     @Builder.Default
-    private byte[] photo=new byte[300_000];
+    private byte[] photo = new byte[300_000];
 }

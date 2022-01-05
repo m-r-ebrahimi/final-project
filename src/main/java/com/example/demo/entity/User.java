@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class User extends BasePerson {
+public class User extends BaseUser {
     @Builder.Default
     private Date date = new Date();
     private BigDecimal balance;
