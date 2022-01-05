@@ -22,20 +22,15 @@ public class BaseMessage extends BaseEntity {
     @OneToOne(cascade = CascadeType.ALL)
     private ServiceOrder order;
 
-
-    @Column(nullable = false)
     private BigDecimal price;
 
     @Builder.Default
-    private Date dateTime = new Date(System.currentTimeMillis());
+    private Date dateTime = new Date();
 
-    @Column(nullable = false)
     private Date suggestedDateTime;
 
     private String details;
 
-
-    @Column(nullable = false)
     @Builder.Default
     private BaseMessageStatus status = BaseMessageStatus.WAITING;
 }

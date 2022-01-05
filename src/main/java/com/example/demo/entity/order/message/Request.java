@@ -19,6 +19,4 @@ public class Request extends BaseMessage {
     @ManyToOne(cascade = CascadeType.ALL)
     private Customer owner;
 
-    @Column(nullable = false)
-    private String address;
 }

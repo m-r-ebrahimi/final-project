@@ -14,9 +14,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @SuperBuilder
 public class SubService extends BaseEntity {
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private MainService parent;
-    @Column(nullable = false)
     private BigDecimal basePrice;
     private String description;
 }
