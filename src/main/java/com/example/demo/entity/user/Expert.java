@@ -1,5 +1,6 @@
-package com.example.demo.entity;
+package com.example.demo.entity.user;
 
+import com.example.demo.entity.service.SubService;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -10,15 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
-@SuperBuilder
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-public class Employee extends User{
+@NoArgsConstructor
+@SuperBuilder
+public class Expert extends User {
     @ManyToMany(cascade = CascadeType.ALL)
     @Builder.Default
-    private List<HomeServiceOption> expertises = new ArrayList<>();
+    private List<SubService> expertises = new ArrayList<>();
 }

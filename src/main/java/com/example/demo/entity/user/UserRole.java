@@ -1,18 +1,18 @@
-package com.example.demo.entity;
+package com.example.demo.entity.user;
 
 import com.example.demo.entity.core.BaseEntity;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@SuperBuilder
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
+@SuperBuilder
 public class UserRole extends BaseEntity {
     private String role;
 }

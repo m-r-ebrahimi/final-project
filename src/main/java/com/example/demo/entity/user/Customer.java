@@ -1,5 +1,6 @@
-package com.example.demo.entity;
+package com.example.demo.entity.user;
 
+import com.example.demo.entity.order.ServiceOrder;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -9,16 +10,16 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Entity
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
-@SuperBuilder
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-public class Customer extends User{
+@NoArgsConstructor
+@SuperBuilder
+public class Customer extends User {
+
     @OneToMany(cascade = CascadeType.ALL)
     @Builder.Default
-    private List<OrderOfCustomer> orders = new ArrayList<>();
+    private List<ServiceOrder> orders = new ArrayList<>();
+
 }
