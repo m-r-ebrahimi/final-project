@@ -19,13 +19,9 @@ public class User extends BaseUser {
     private Date date = new Date();
     private BigDecimal balance;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserRole> roles;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserStatus> statuses;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @Builder.Default
-    private List<Transaction> transactions = new ArrayList<>();
 
 }

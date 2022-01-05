@@ -8,6 +8,7 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,8 @@ import java.util.List;
 @SuperBuilder
 public class Customer extends User {
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @Builder.Default
-    private List<ServiceOrder> orders = new ArrayList<>();
+    private List<CustomersOrder> orders = new ArrayList<>();
 
 }
