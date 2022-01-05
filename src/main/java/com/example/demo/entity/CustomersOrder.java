@@ -2,11 +2,13 @@ package com.example.demo.entity;
 
 import com.example.demo.entity.core.BaseEntity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,7 +24,8 @@ public class CustomersOrder extends BaseEntity {
     private Customer customer;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Suggestion> suggestions;
+    @Builder.Default
+    private List<Suggestion> suggestions=new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "select_suggestion_id")

@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Customer;
+import com.example.demo.entity.CustomersOrder;
 import com.example.demo.repository.CustomerRepository;
 import com.example.demo.service.core.BaseService;
 import com.example.demo.validation.CustomerValidationService;
@@ -59,6 +60,12 @@ public class CustomerService extends BaseService<Customer, Long> {
     @Transactional
     public List<Customer> loadAll() {
         return super.loadAll();
+    }
+
+    @Transactional
+    public void addOrder(Customer customer, CustomersOrder order) {
+        customer.getOrders().add(order);
+        super.save(customer);
     }
 }
 

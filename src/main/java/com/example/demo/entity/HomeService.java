@@ -18,12 +18,8 @@ import java.util.List;
 @NoArgsConstructor
 @SuperBuilder
 public class HomeService extends BaseEntity {
-
     private String name;
-
-    @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "homeService", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @Builder.Default
     private List<HomeServiceOption> subServices = new ArrayList<>();;
-
-
 }

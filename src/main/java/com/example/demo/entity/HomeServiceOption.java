@@ -15,8 +15,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @SuperBuilder
 public class HomeServiceOption extends BaseEntity {
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private HomeService parent;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private HomeService homeService;
     private BigDecimal basePrice;
     private String description;
 }
