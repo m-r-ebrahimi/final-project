@@ -1,5 +1,6 @@
-package com.example.demo.entity.service;
+package com.example.demo.entity;
 
+import com.example.demo.entity.HomeService;
 import com.example.demo.entity.core.BaseEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -13,9 +14,9 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class SubService extends BaseEntity {
+public class HomeServiceOption extends BaseEntity {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private MainService parent;
+    private HomeService parent;
     private BigDecimal basePrice;
     private String description;
 }

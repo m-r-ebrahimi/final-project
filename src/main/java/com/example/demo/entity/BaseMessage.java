@@ -1,12 +1,13 @@
-package com.example.demo.entity.order.message;
+package com.example.demo.entity;
 
 import com.example.demo.entity.core.BaseEntity;
-import com.example.demo.entity.order.ServiceOrder;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
 import java.math.BigDecimal;

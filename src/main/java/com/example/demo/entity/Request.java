@@ -1,11 +1,11 @@
-package com.example.demo.entity.order.message;
+package com.example.demo.entity;
 
-import com.example.demo.entity.user.Customer;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -18,5 +18,4 @@ import javax.persistence.ManyToOne;
 public class Request extends BaseMessage {
     @ManyToOne(cascade = CascadeType.ALL)
     private Customer owner;
-
 }

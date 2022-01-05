@@ -1,5 +1,6 @@
-package com.example.demo.entity.core;
+package com.example.demo.entity;
 
+import com.example.demo.entity.core.BaseEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 

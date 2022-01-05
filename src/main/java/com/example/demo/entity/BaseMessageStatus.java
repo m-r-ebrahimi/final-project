@@ -1,4 +1,4 @@
-package com.example.demo.entity.order.message;
+package com.example.demo.entity;
 
 public enum BaseMessageStatus{
     CANCELLED, WAITING, BUSY;

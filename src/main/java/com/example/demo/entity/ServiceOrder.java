@@ -1,17 +1,13 @@
-package com.example.demo.entity.order;
+package com.example.demo.entity;
 
-import com.example.demo.entity.Transaction;
 import com.example.demo.entity.core.BaseEntity;
-import com.example.demo.entity.order.message.BaseMessageStatus;
-import com.example.demo.entity.order.message.Request;
-import com.example.demo.entity.order.message.Suggestion;
-import com.example.demo.entity.order.message.SuggestionStatus;
-import com.example.demo.entity.service.SubService;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +20,7 @@ import java.util.List;
 public class ServiceOrder extends BaseEntity {
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private SubService service;
+    private HomeServiceOption serviceOption;
 
     private Date finishDateTime;
 
@@ -45,5 +41,6 @@ public class ServiceOrder extends BaseEntity {
 
     @OneToOne
     private Comment comment;
+
 
 }

@@ -1,12 +1,14 @@
-package com.example.demo.entity.order.message;
+package com.example.demo.entity;
 
-import com.example.demo.entity.user.Expert;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+
 
 @Entity
 @Data
@@ -16,9 +18,7 @@ import javax.persistence.ManyToOne;
 public class Suggestion extends BaseMessage {
 
     @ManyToOne
-    private Expert owner;
-
-    private Double duration;
+    private Employee employee;
 
     @Builder.Default
     private SuggestionStatus suggestionStatus = SuggestionStatus.PENDING;

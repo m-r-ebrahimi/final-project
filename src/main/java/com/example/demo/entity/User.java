@@ -1,7 +1,5 @@
-package com.example.demo.entity.user;
+package com.example.demo.entity;
 
-import com.example.demo.entity.Transaction;
-import com.example.demo.entity.core.BasePerson;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -17,17 +15,14 @@ import java.util.List;
 @NoArgsConstructor
 @SuperBuilder
 public class User extends BasePerson {
+    @Builder.Default
+    private Date date = new Date();
+    private BigDecimal balance;
 
     @ManyToMany
     private List<UserRole> roles;
-
-    @Builder.Default
-    private Date date = new Date();
-
-    private BigDecimal balance;
-
-    @Builder.Default
-    private UserStatus status = UserStatus.NEW;
+    @ManyToMany
+    private List<UserStatus> statuses;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @Builder.Default

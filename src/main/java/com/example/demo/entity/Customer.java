@@ -1,7 +1,9 @@
-package com.example.demo.entity.user;
+package com.example.demo.entity;
 
-import com.example.demo.entity.order.ServiceOrder;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.CascadeType;

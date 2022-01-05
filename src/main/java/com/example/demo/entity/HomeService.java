@@ -1,4 +1,4 @@
-package com.example.demo.entity.service;
+package com.example.demo.entity;
 
 import com.example.demo.entity.core.BaseEntity;
 import lombok.*;
@@ -17,13 +17,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class MainService extends BaseEntity {
+public class HomeService extends BaseEntity {
 
     private String name;
 
     @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @Builder.Default
-    private List<SubService> subServices = new ArrayList<>();;
+    private List<HomeServiceOption> subServices = new ArrayList<>();;
 
 
 }

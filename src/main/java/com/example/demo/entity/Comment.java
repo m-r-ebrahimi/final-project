@@ -1,9 +1,9 @@
-package com.example.demo.entity.order;
+package com.example.demo.entity;
 
 import com.example.demo.entity.core.BaseEntity;
-import com.example.demo.entity.user.Customer;
-import com.example.demo.entity.user.Expert;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
@@ -14,15 +14,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @SuperBuilder
 public class Comment extends BaseEntity {
-
-    private Integer points;
     private String description;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Customer sender;
+    private Customer customer;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Expert recipient;
+    private Employee employee;
 
     @OneToOne
     private ServiceOrder order;
