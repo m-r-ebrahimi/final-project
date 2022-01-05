@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CustomerValidationService {
-    @Transactional(propagation = Propagation.NESTED)
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public boolean valid(Customer customer) {
         return checkFirstname(customer) &&
                 checkLastname(customer) &&
@@ -52,7 +52,7 @@ public class CustomerValidationService {
     private boolean checkPassword(Customer customer) {
         boolean check = true;
         if (customer.getPassword() != null) {
-            check = customer.getPassword().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
+            check = customer.getPassword().matches("^[a-zA-Z0-9._-]{3,}$");
         }
         return check;
     }
