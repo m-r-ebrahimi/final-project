@@ -15,11 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @SuperBuilder
 public class Employee extends User {
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @Builder.Default
-    private List<HomeServiceOption> expertises = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @Builder.Default
-    private List<Suggestion> suggestions=new ArrayList<>();
+    private List<Suggestion> suggestions = new ArrayList<>();
 }

@@ -9,11 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class EmployeeValidationService {
     @Transactional(propagation = Propagation.NESTED)
     public boolean valid(Employee employee) {
-        return checkFirstname(employee) &&
+        /*return checkFirstname(employee) &&
                 checkLastname(employee) &&
                 checkUsername(employee) &&
                 checkPassword(employee) &&
-                checkEmail(employee);
+                checkEmail(employee);*/
+        return true;
     }
 
     private boolean checkFirstname(Employee employee) {
