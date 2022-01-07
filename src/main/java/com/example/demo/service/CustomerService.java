@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.option.OrderStatus;
 import com.example.demo.entity.option.Suggestion;
 import com.example.demo.entity.users.Customer;
 import com.example.demo.entity.option.CustomersOrder;
@@ -73,6 +74,7 @@ public class CustomerService extends BaseService<Customer, Long> {
     public void selectSuggestion(Customer customer, Suggestion selectedSuggestion){
         List<CustomersOrder> orders = customer.getOrders();
         orders.get(orders.size()-1).setSelectSuggestion(selectedSuggestion);
+        orders.get(orders.size()-1).setStatus(OrderStatus.PROCESSING);
         super.save(customer);
     }
 }
