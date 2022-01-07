@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.option.Suggestion;
 import com.example.demo.entity.users.Customer;
 import com.example.demo.entity.option.CustomersOrder;
 import com.example.demo.repository.CustomerRepository;
@@ -65,6 +66,13 @@ public class CustomerService extends BaseService<Customer, Long> {
     @Transactional
     public void addOrder(Customer customer, CustomersOrder order) {
         customer.getOrders().add(order);
+        super.save(customer);
+    }
+
+    @Transactional
+    public void selectSuggestion(Customer customer, Suggestion selectedSuggestion){
+        List<CustomersOrder> orders = customer.getOrders();
+        orders.get(orders.size()-1).setSelectSuggestion(selectedSuggestion);
         super.save(customer);
     }
 }

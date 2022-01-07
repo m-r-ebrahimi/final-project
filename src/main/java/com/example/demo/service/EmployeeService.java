@@ -34,7 +34,7 @@ public class EmployeeService extends BaseService<Employee, Long> {
     @Override
     @Transactional
     public void save(Employee entity) {
-            super.save(entity);
+        super.save(entity);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class EmployeeService extends BaseService<Employee, Long> {
         CustomersOrder order = suggestion.getOrder();
         order.getSuggestions().add(suggestion);
         super.save(employee);
-customersOrderRepository.save(order);
+        customersOrderRepository.save(order);
     }
 }
 
