@@ -33,5 +33,4 @@ public class CustomersOrder extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
-
 }
