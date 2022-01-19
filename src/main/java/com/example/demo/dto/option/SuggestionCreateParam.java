@@ -12,9 +12,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
 @Data
-@Builder
+/*@Builder
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor*/
 public class SuggestionCreateParam {
 
 }

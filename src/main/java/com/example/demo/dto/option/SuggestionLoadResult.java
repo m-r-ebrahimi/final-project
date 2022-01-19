@@ -6,9 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
+/*@Builder
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor*/
 public class SuggestionLoadResult {
 
 }

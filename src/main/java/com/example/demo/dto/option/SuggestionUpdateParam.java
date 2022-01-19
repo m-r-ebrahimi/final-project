@@ -3,9 +3,9 @@ package com.example.demo.dto.option;
 import lombok.*;
 
 @Data
-@Builder
+/*@Builder
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor*/
 public class SuggestionUpdateParam {
 
 }
