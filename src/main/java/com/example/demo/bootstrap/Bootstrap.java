@@ -2,41 +2,33 @@ package com.example.demo.bootstrap;
 
 import com.example.demo.entity.users.Customer;
 import com.example.demo.repository.CustomerRepository;
-import com.example.demo.repository.CustomersOrderRepository;
-import com.example.demo.repository.HomeServiceOptionRepository;
-import com.example.demo.repository.HomeServiceRepository;
 import com.example.demo.service.CustomerService;
-import com.example.demo.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
+@Slf4j
+@Component
+@RequiredArgsConstructor
+@Profile({"dev", "prod"})
 public class Bootstrap implements CommandLineRunner {
 
-    @Autowired
-    private CustomerService customerService;
-
-    @Autowired
-    private CustomerRepository customerRepository;
-
-    @Autowired
-    private CustomersOrderRepository customersOrderRepository;
-
-    @Autowired
-    private HomeServiceRepository homeServiceRepository;
-
-    @Autowired
-    private HomeServiceOptionRepository homeServiceOptionRepository;
-
-    @Autowired
-    private EmployeeService employeeService;
+    private final CustomerService customerService;
+    private final CustomerRepository customerRepository;
 
     @Override
-    public void run(String... args) throws Exception {
-        Customer user = Customer.builder()
-                .firstname("Ali")
-                .username("Ali1234")
-                .password("lskjdklfj")
-                .build();
-        customerService.save(user);
+    public void run(String... args) {
+        log.info("try to register customers ...");
+        if (customerRepository.count() == 0) {
+            Customer user = Customer.builder()
+                    .firstname("Ali")
+                    .username("Ali1234")
+                    .password("lskjdklfj")
+                    .build();
+            customerService.save(user);
+            log.info("register default user and account");
+        }
     }
 }
