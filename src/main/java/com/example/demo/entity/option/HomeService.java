@@ -21,5 +21,5 @@ public class HomeService extends BaseEntity {
     private String name;
     @OneToMany(mappedBy = "homeService", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @Builder.Default
-    private List<HomeServiceOption> subServices = new ArrayList<>();;
+    private List<HomeServiceOption> subServices = new ArrayList<>();
 }
