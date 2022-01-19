@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface AdminRepository extends BaseRepository<Admin> {
     Optional<Admin> findById(Long id);
     Optional<Admin> findByUsernameAndPassword(String username,String password);
-    Page<Admin> findAll(Pageable pageable);
+    //Page<Admin> findAll(Pageable pageable);
 }

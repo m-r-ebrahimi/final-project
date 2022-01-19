@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface CustomerRepository extends BaseRepository<Customer> {
     Optional<Customer> findById(Long id);
     Optional<Customer> findByUsernameAndPassword(String username,String password);
-    Page<Customer> findAll(Pageable pageable);
+    //Page<Customer> findAll(Pageable pageable);
 }
