@@ -10,8 +10,6 @@ import javax.persistence.Entity;
 @Entity
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @SuperBuilder
 public class Admin extends User {
-    private String adminState;
 }

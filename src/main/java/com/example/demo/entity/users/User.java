@@ -17,7 +17,8 @@ public class User extends BaseUser {
     @Builder.Default
     private Date date = new Date();
     private BigDecimal balance;
-
+    private long points;
+    private boolean isDeleted;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserRole> roles;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
