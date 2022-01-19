@@ -9,5 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminUpdateResult {
+public class UserDeleteParam {
+    private Long userId;
 }

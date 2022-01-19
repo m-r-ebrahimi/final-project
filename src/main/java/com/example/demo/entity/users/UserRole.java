@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity
 @Data
@@ -14,5 +16,6 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 @SuperBuilder
 public class UserRole extends BaseEntity {
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private UserRoleOption role;
 }

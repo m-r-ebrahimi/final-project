@@ -9,5 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminCreateParam {
+public class UserDeleteResult {
+    private boolean isDone;
 }
